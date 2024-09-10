@@ -1,0 +1,40 @@
+# Ignore the .NET build files
+bin/
+obj/
+
+# Ignore Visual Studio Code settings
+.vscode/
+
+# Ignore Prettier related files and node_modules
+node_modules/
+package-lock.json
+package.json
+
+# Ignore user-specific files
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+
+# Ignore compiled DLLs and PDB files
+*.dll
+*.pdb
+*.exe
+*.apphost.exe
+
+# Ignore generated JSON and assets
+*.json
+
+# Ignore backup and temp files
+*.bak
+*.tmp
+
+# Ignore NuGet packages
+*.nupkg
+project.lock.json
+.nuget/
+
+# Ignore MSBuild generated files
+*.csproj.nuget.dgspec.json
+*.csproj.nuget.g.props
+*.csproj.nuget.g.targets
