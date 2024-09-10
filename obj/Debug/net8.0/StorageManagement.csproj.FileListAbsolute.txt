@@ -1,0 +1,15 @@
+F:\Integfiy Folder\Projects\StorageManagement\obj\Debug\net8.0\StorageManagement.GeneratedMSBuildEditorConfig.editorconfig
+F:\Integfiy Folder\Projects\StorageManagement\obj\Debug\net8.0\StorageManagement.AssemblyInfoInputs.cache
+F:\Integfiy Folder\Projects\StorageManagement\obj\Debug\net8.0\StorageManagement.AssemblyInfo.cs
+F:\Integfiy Folder\Projects\StorageManagement\obj\Debug\net8.0\StorageManagement.csproj.CoreCompileInputs.cache
+F:\Integfiy Folder\Projects\StorageManagement\obj\Debug\net8.0\StorageManagement.sourcelink.json
+F:\Integfiy Folder\Projects\StorageManagement\bin\Debug\net8.0\StorageManagement.exe
+F:\Integfiy Folder\Projects\StorageManagement\bin\Debug\net8.0\StorageManagement.deps.json
+F:\Integfiy Folder\Projects\StorageManagement\bin\Debug\net8.0\StorageManagement.runtimeconfig.json
+F:\Integfiy Folder\Projects\StorageManagement\bin\Debug\net8.0\StorageManagement.dll
+F:\Integfiy Folder\Projects\StorageManagement\bin\Debug\net8.0\StorageManagement.pdb
+F:\Integfiy Folder\Projects\StorageManagement\obj\Debug\net8.0\StorageManagement.dll
+F:\Integfiy Folder\Projects\StorageManagement\obj\Debug\net8.0\refint\StorageManagement.dll
+F:\Integfiy Folder\Projects\StorageManagement\obj\Debug\net8.0\StorageManagement.pdb
+F:\Integfiy Folder\Projects\StorageManagement\obj\Debug\net8.0\StorageManagement.genruntimeconfig.cache
+F:\Integfiy Folder\Projects\StorageManagement\obj\Debug\net8.0\ref\StorageManagement.dll
