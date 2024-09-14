@@ -1,4 +1,4 @@
-namespace StorageManagement.src;
+namespace StorageManagement.src.Domain;
 
 public enum UnitEnum
 {

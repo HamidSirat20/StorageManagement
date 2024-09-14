@@ -38,3 +38,5 @@ project.lock.json
 *.csproj.nuget.dgspec.json
 *.csproj.nuget.g.props
 *.csproj.nuget.g.targets
+
+Book.cs

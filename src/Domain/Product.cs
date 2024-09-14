@@ -1,17 +1,20 @@
+using System.Diagnostics.Metrics;
 using System.Text;
+using StorageManagement.src.Shared;
 
-namespace StorageManagement.src;
+namespace StorageManagement.src.Domain;
 
-public class Product
+public partial class Product
 {
     private int _id;
     private string _name;
     private string? _description;
-    private int _maxAmountStock = 0;
+    private int _thresholdInStock = 4;
 
     public int AmountInStock { get; private set; }
     public bool IsAmountBelowLimit { get; private set; }
     public UnitEnum UnitEnum { get; set; }
+    public Price Price { get; set; }
 
     public string Name
     {
@@ -54,6 +57,15 @@ public class Product
         _id = id;
         _name = name;
     }
+    public Product(int id, string name, string? description, UnitEnum unit, int maxAmountStock, Price price)
+    : this(id, name)
+    {
+        _description = description;
+        UnitEnum = unit;
+        AmountInStock = maxAmountStock;
+        Price = price;
+        RefillStock();
+    }
 
     public void IncreaseStock()
     {
@@ -61,18 +73,30 @@ public class Product
     }
     public void UseProduct(int item)
     {
-        if (item <= AmountInStock)
+        if (item < AmountInStock)
         {
             AmountInStock -= item;
+        }
+        else if (item > AmountInStock & AmountInStock > 0)
+        {
+            Log($"Not enough {_name} in stock, only {AmountInStock} left.");
+            RefillStock();
+            AmountInStock = 0;
+        }
+        else if (item == AmountInStock)
+        {
+            Log($"Zero {_name} left. Refill!");
+            RefillStock();
+            AmountInStock = 0;
         }
         else
         {
             RefillStock();
-            Log($"There is {AmountInStock} in stock left! {ProductDetails()}");
+            Log($"There is {AmountInStock} in stock left! Refill! ");
         }
 
     }
-    private void Decrease(int amount, string reason)
+    public void Decrease(int amount, string reason)
     {
         if (amount <= AmountInStock)
         {
@@ -88,21 +112,21 @@ public class Product
 
     private void RefillStock()
     {
-        if (AmountInStock < _maxAmountStock)
+        if (AmountInStock < _thresholdInStock)
         {
             IsAmountBelowLimit = true;
         }
     }
 
-    private string ProductDetails()
+    public void ProductDetails()
     {
-        return ($"Id: {_id} and name: {_name} Amount: {AmountInStock} and description: {_description}");
+        System.Console.WriteLine(($"Id: {_id} and name: {_name} Amount: {AmountInStock} and description: {_description}, price{Price}"));
     }
 
     public string ProductFullDescriptions()
     {
         StringBuilder sb = new();
-        sb.Append($"{_id} {_name} {_description} {AmountInStock}");
+        sb.Append($"Id: {_id},name: {_name},desc: {_description}, amount: {AmountInStock}, price: {Price.ToString()}");
         if (IsAmountBelowLimit)
         {
             sb.Append("\nLow stock! Refill");
