@@ -18,5 +18,8 @@ public partial class Price
     {
         return $"{ItemPrice} {currency}";
     }
+    public Price()
+    {
 
+    }
 }

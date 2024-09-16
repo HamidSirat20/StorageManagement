@@ -9,7 +9,7 @@ public partial class Product
     private int _id;
     private string _name;
     private string? _description;
-    private int _thresholdInStock = 4;
+    private static int _thresholdInStock = 4;
 
     public int AmountInStock { get; private set; }
     public bool IsAmountBelowLimit { get; private set; }
@@ -50,6 +50,13 @@ public partial class Product
             {
                 _description = value.Length > 250 ? value[..250] : value;
             }
+        }
+    }
+    public static void SetTheThreshold(int threshold)
+    {
+        if (threshold > 0)
+        {
+            _thresholdInStock = threshold;
         }
     }
     public Product(int id, string name)
